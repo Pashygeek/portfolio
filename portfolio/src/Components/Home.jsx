@@ -10,7 +10,7 @@ function Home() {
       <div className="introContent">
         <span className="hello">Hello there,</span>
         <span className="introText">
-          I'm<span className="introName"> Patience</span> <br />Web Developer
+          I'm<span className="introName"> Patience</span> <br />A Web Developer
         </span>
         <p className="introPara">I'm a sophisticated Website Developer ready to meet all your website desire needs.</p>
          <p className='introPara'>Want to learn more about me, click on the About me button below .</p>

@@ -1,10 +1,10 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import "./contact.css"
 
-function Contact() {
+function Contact({ isDarkMode }) {
   return (
-    <div>
-    <h2>Contact me today with this...... !</h2>
+    <div className={`contact-page ${isDarkMode ? 'dark' : 'light'}`}>
+     <h2>Contact me today with this...... !</h2>
     </div>
   )
 }

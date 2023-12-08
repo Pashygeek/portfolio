@@ -1,10 +1,11 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import "./about.css"
 
-function About() {
+function About({ isDarkMode }) {
   return (
-    <div>
-        <h2>About me</h2>
+    <div className={`about-page ${isDarkMode ? 'dark' : 'light'}`}>
+      <h2>About me</h2>
+      <h1>In this i will tell you more about me</h1>
     </div>
   )
 }

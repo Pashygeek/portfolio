@@ -7,7 +7,7 @@ import "./navbar.css";
 
 const Navbar = ({ toggleDarkMode, isDarkMode }) => {
   return (
-    <nav className='navbar'>
+    <nav className={`navbar ${isDarkMode ? 'dark' : 'light'}`}>
       <Link to="/">
         <img src={Logo} alt='logo' className='logo' />
       </Link>
@@ -28,7 +28,7 @@ const Navbar = ({ toggleDarkMode, isDarkMode }) => {
         size={30}
       />
       <Link to="/contact">
-        <button className='desktopMenuBtn'>
+        <button className="desktopMenuBtn" >
           <img src={Contactimg} alt='contact-me' className='desktopMenuImg' />
           Contact Me
         </button>
