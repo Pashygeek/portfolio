@@ -54,7 +54,7 @@ function About({ isDarkMode }) {
           <div className="skill-categories">
             <div className="skill-category">
               <h3 className='skill-header'>Frontend</h3>
-              <ul>
+              <ul className='skills-list'>
                 {frontendSkills.map((skill, index) => (
                   <li key={index}>{skill}</li>
                 ))}
@@ -63,7 +63,7 @@ function About({ isDarkMode }) {
             <div className="skill-category-divider"></div>
             <div className="skill-category">
               <h3 className='skill-header'>Backend</h3>
-              <ul>
+              <ul className='skills-list'>
                 {backendSkills.map((skill, index) => (
                   <li key={index}>{skill}</li>
                 ))}
@@ -72,7 +72,7 @@ function About({ isDarkMode }) {
             <div className="skill-category-divider"></div>
             <div className="skill-category">
               <h3 className='skill-header'>Other</h3>
-              <ul>
+              <ul className='skills-list'>
                 {otherSkills.map((skill, index) => (
                   <li key={index}>{skill}</li>
                 ))}

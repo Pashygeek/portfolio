@@ -33,11 +33,12 @@ function Home() {
       id: 4,
       avatar: avatar2,
       name: ' Jake',
-      review: 'I may not be a client but working with Patience was such a beautiful experience.She showed dedication and determination which lack in many teammates.',
+      review: 'I may not be a client but working with Patience was such a beautiful experience. She showed dedication and determination which lack in many teammates.',
     },
   ];
 
   const [visibleReviews, setVisibleReviews] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
   const handleNextClick = () => {
     setVisibleReviews((prev) => (prev + 1) % reviews.length);
@@ -48,15 +49,30 @@ function Home() {
   };
 
   const handleReviewsClick = () => {
-    // Scroll to or focus on the reviews section
     const reviewsSection = document.getElementById('reviews');
     if (reviewsSection) {
       reviewsSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
-  const canShowNext = reviews.length > visibleReviews + 3;
+  const reviewsToShow = isMobile ? 1 : 2;
+  const canShowNext = reviews.length > visibleReviews + reviewsToShow;
   const canShowPrev = visibleReviews > 0;
+
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth <= 440);
+    };
+
+    checkIsMobile();
+
+    window.addEventListener('resize', checkIsMobile);
+
+    return () => {
+      window.removeEventListener('resize', checkIsMobile);
+    };
+  }, []);
+
 
   // Typing effect
   const introText = "A Web Developer";
@@ -80,53 +96,72 @@ function Home() {
   }, []);
 
   return (
-    <section id="intro">
-      <div className="introContent">
-        <span className="hello">Hello there,</span>
-        <span className="introText">
-          I'm<span className="introName"> Patience</span> <br />
-          {typedText}{isTypingComplete && <span className='blinking-cursor'>|</span>}
-        </span>
-        <p className="introPara">I'm a sophisticated Website Developer ready to meet all your website desire needs.</p>
-        <p className="introPara2">Want to learn more about me, click on the About me button below or click on the client reviews button
-         to see reviews from different clients .</p>
-        <div className='button-container'>
-        <Link to="/about">
-          <button className="btn">
-            <img src={about} alt="about" className="about-img" />
-            About me
-          </button>
-        </Link>
-        <Link to="#reviews">
-        <button className='btn' onClick={handleReviewsClick}>
-          <img src={reviewsimg} alt='reviews' className='about-img' />
-          <span>Client Reviews</span>
-        </button>
-        </Link>
+    <div className='home-page'>
+      <section id="intro">
+        <div className="introContent">
+          <span className="hello">Hello there,</span>
+          <span className="introText">
+            I'm<span className="introName"> Patience</span> <br />
+            {typedText}{isTypingComplete && <span className='blinking-cursor'>|</span>}
+          </span>
+          <p className="introPara">I'm a sophisticated Website Developer ready to meet all your website desire needs.</p>
+          <p className="introPara2">Want to learn more about me, click on the About me button below or click on the client reviews button
+            to see reviews from different clients.</p>
+          <div className='button-container'>
+            <Link to="/about">
+              <button className="btn">
+                <img src={about} alt="about" className="about-img" />
+                About me
+              </button>
+            </Link>
+            <Link to="#reviews">
+              <button className='btn' onClick={handleReviewsClick}>
+                <img src={reviewsimg} alt='reviews' className='about-img' />
+                <span>Client Reviews</span>
+              </button>
+            </Link>
+          </div>
         </div>
-      </div>
-      <img src={bg} alt="Profile" className="bg" />
+        <img src={bg} alt="Profile" className="bg" />
 
-      {/* Client review section */}
-      <section id="reviews" className="reviews">
-        <h2>Client Reviews</h2>
-        <div className="review-container">
-          {reviews.slice(visibleReviews, visibleReviews + 3).map((review) => (
-            <Review key={review.id} review={review} />
-          ))}
-        </div>
-        {canShowPrev && (
-          <button className="review-nav-btn" onClick={handlePrevClick}>
-            {'<'}
-          </button>
-        )}
-        {canShowNext && (
-          <button className="review-nav-btn" onClick={handleNextClick}>
-            {'>'}
-          </button>
-        )}
+        {/* Client review section */}
+        <section className="reviews">
+          <h2 className='review-head'>Client Reviews</h2>
+          <div id="reviews" className="review-container">
+            {reviews.slice(visibleReviews, visibleReviews + reviewsToShow).map((review) => (
+              <Review key={review.id} review={review} />
+            ))}
+          </div>
+          {isMobile ? (
+            <div>
+              {canShowNext && (
+                <button className="review-nav-btn right" onClick={handleNextClick}>
+                  {'>'}
+                </button>
+              )}
+              {canShowPrev && (
+                <button className="review-nav-btn left" onClick={handlePrevClick}>
+                 {'<'}
+                </button>
+              )}
+            </div>
+          ) : (
+            <div>
+              {canShowNext && (
+                <button className="review-nav-btn right" onClick={handleNextClick}>
+               {'>'}
+                </button>
+              )}
+              {canShowPrev && (
+                <button className="review-nav-btn left" onClick={handlePrevClick}>
+                  {'<'}
+                </button>
+              )}
+            </div>
+          )}
+        </section>
       </section>
-    </section>
+    </div>
   );
 }
 

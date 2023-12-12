@@ -48,7 +48,7 @@ function Contact({ isDarkMode }) {
       ) : (
         <>
           <form className="contact-form" onSubmit={handleSubmit}>
-            <label htmlFor="name">Name:</label>
+            <label className='label' htmlFor="name">Name:</label>
             <input
               type="text"
               id="name"
@@ -57,7 +57,7 @@ function Contact({ isDarkMode }) {
               onChange={handleChange}
               required
             />
-            <label htmlFor="email">Email:</label>
+            <label className='label' htmlFor="email">Email:</label>
             <input
               type="email"
               id="email"
@@ -66,7 +66,7 @@ function Contact({ isDarkMode }) {
               onChange={handleChange}
               required
             />
-            <label htmlFor="projectTitle">Project Title:</label>
+            <label className='label' htmlFor="projectTitle">Project Title:</label>
             <input
               type="text"
               id="projectTitle"
@@ -75,7 +75,7 @@ function Contact({ isDarkMode }) {
               onChange={handleChange}
               required
             />
-            <label htmlFor="description">Description:</label>
+            <label className='label' htmlFor="description">Description:</label>
             <textarea
               id="description"
               name="description"

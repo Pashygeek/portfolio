@@ -1,3 +1,4 @@
+/* Existing styles for desktop compatibility */
 .about-page {
   height: 100%;
   width: 100vw;
@@ -51,7 +52,6 @@
   text-align: center;
 }
 
-/* Add this to your existing about.css file */
 .skill-categories {
   display: flex;
   justify-content: space-between;
@@ -89,9 +89,13 @@
 
 .skill-mainhd {
   font-size: 2rem;
+  margin-top: 40px;
 }
 
-/* Add this to your existing about.css file */
+.skill-header {
+  margin-top: 5px;
+}
+
 .languages-section {
   margin-top: 2rem;
 }
@@ -126,7 +130,6 @@
   transition: background-color 0.3s ease-in-out;
 }
 
-/* Animation for fading in each language item */
 @keyframes fadeInUp {
   to {
     opacity: 1;
@@ -146,3 +149,240 @@
   transform: scale(1.1);
   transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
+
+/* Media query for phone compatibility mode */
+@media screen and (max-width: 480px) {
+  .about-page {
+    height: 200vh;
+    width: 100vw;
+    max-width: 75rem;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .slide-in-text {
+    font-size: 1.2rem;
+    top: 100px;
+  }
+
+  .about-content {
+    padding: 1rem;
+    margin-top: 8%;
+  }
+
+  .about-para {
+    margin-top: 10rem;
+    font-size: 0.8rem;
+    width: 80%;
+    margin-left: 2.5rem;
+  }
+
+  .skill-categories {
+    flex-direction: column;
+    font-size: 1rem;
+  }
+
+  .skills-list {
+    font-size: 0.8rem;
+  }
+
+  .skill-category-divider {
+    display: none;
+  }
+
+  .skill-category {
+    text-align: center;
+    padding: 1rem;
+    width: 90%; /* Set width to 100% for full width */
+  }
+
+  .skill-category ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .skill-category li {
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #c6b172;
+    border-radius: 8px;
+    flex: 1;
+  }
+
+  .skill-mainhd {
+    font-size: 1.5rem;
+    margin-bottom: 2px;
+    margin-top: 50px;
+  }
+
+  .languages-section {
+    flex-direction: row;
+  }
+
+  .languages-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .languages-section li {
+    width: 70%;
+    flex-direction: column;
+  }
+
+  .languages-section ul {
+    flex-direction: row;
+    font-size: 0.8rem;
+    justify-content: space-around;
+  }
+
+  .languages-section li {
+    width: 30%;
+  }
+}
+
+/* Ipad compatibility */
+
+@media screen and (min-width: 413px) and (max-width: 810px) {
+  .about-page {
+    height: 160vh;
+    width: 100vw;
+    max-width: 75rem;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .about-para {
+    font-size: 1.1rem;
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  .slide-in-text {
+    position: absolute;
+    font-size: 1.3rem;
+    font-weight: 700;
+    top: 7%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    animation: slideIn 1s ease-in-out;
+  }
+
+  @keyframes slideIn {
+    0% {
+      opacity: 0;
+      transform: translate(-50%, -10%);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .about-content {
+    padding: 2rem;
+    margin-top: 20%;
+    text-align: center;
+  }
+
+  .skill-categories {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .skill-category {
+    flex: 1;
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .skill-category-divider {
+    width: 3px;
+    height: 30vh;
+    background-color: #ddd;
+    margin: 0 0.5rem;
+  }
+
+  .skill-category h3 {
+    margin-bottom: 1rem;
+  }
+
+  .skill-category ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .skill-category li {
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #c6b172;
+    border-radius: 8px;
+  }
+
+  .skill-header {
+    margin-top: 5px;
+  }
+
+  .skill-mainhd {
+    font-size: 2rem;
+    margin-top: 40px;
+  }
+
+  .languages-section {
+    margin-top: 2rem;
+  }
+
+  .languages-section h2 {
+    font-size: 2rem;
+  }
+
+  .languages-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .languages-section li {
+    margin: 0.5rem;
+    padding: 1rem;
+    background-color: #2c3e50;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 150px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s forwards ease-in-out, moveIn 1s forwards ease-in-out;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes moveIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .languages-section li:hover {
+    background-color: #34495e;
+    transform: scale(1.1);
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }}
