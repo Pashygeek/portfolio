@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/portfolio/static/css/main.3cf39aa4.css",
+    "main.js": "/portfolio/static/js/main.e20cc396.js",
+    "static/js/787.7da95b79.chunk.js": "/portfolio/static/js/787.7da95b79.chunk.js",
+    "static/media/portfolio-image.png": "/portfolio/static/media/portfolio-image.1a3aefe6cee77b081258.png",
+    "static/media/portfolio.png": "/portfolio/static/media/portfolio.394eb11c9742f77699d8.png",
+    "static/media/MC OGA 1.jpg": "/portfolio/static/media/MC OGA 1.a378daaa116736269d0b.jpg",
+    "static/media/portfolio-avatar1.jpg": "/portfolio/static/media/portfolio-avatar1.bb4e49bb54a5de349eee.jpg",
+    "static/media/portfolio-avatar2.webp": "/portfolio/static/media/portfolio-avatar2.fd6e77fcf41cf9354d0f.webp",
+    "static/media/reviews.png": "/portfolio/static/media/reviews.f375778e2eb6b9812ce5.png",
+    "static/media/about-me.png": "/portfolio/static/media/about-me.187b66903875bac67aae.png",
+    "static/media/contact-me.png": "/portfolio/static/media/contact-me.82bad0d486b7b7f00b8c.png",
+    "index.html": "/portfolio/index.html",
+    "main.3cf39aa4.css.map": "/portfolio/static/css/main.3cf39aa4.css.map",
+    "main.e20cc396.js.map": "/portfolio/static/js/main.e20cc396.js.map",
+    "787.7da95b79.chunk.js.map": "/portfolio/static/js/787.7da95b79.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3cf39aa4.css",
+    "static/js/main.e20cc396.js"
+  ]
+}
