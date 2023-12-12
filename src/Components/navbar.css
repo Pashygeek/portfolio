@@ -1,0 +1,140 @@
+a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+.navbar {
+    height: 5rem;
+    width: 92vw;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+}
+
+.logo {
+    object-fit: cover;
+    height: 5rem;
+    width: 5rem;
+}
+
+.desktopMenuListItem {
+    margin: 1rem;
+    cursor: pointer;
+}
+
+.desktopMenuListItem:hover {
+    color: rgb(198, 176, 114);
+    margin-bottom: 0.5rem;
+    border-bottom: 3px solid rgb(198, 176, 114);
+}
+
+.desktopMenuImg {
+    object-fit: cover;
+    height: 1rem;
+    width: 1rem;
+    margin: 1rem;
+}
+
+.desktopMenuBtn {
+    background: rgb(198, 176, 114);
+    color: black;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+    border-radius: 2rem;
+    cursor: pointer;
+}
+.desktopMenuBtn:hover {
+    background: #a6875b;
+  }
+
+.activeLink {
+    color: rgb(198, 176, 114);
+  }
+
+  .darkmode {
+    margin-right: 10px;
+  }
+
+  .light {
+    background-color: white;
+    color: black;
+}
+
+.dark {
+    background-color: black;
+    color: white;
+}
+
+/* Mobile compatibility styles */
+@media screen and (max-width: 480px) {
+    .navbar {
+        height: 5rem;
+        width: 90vw;
+        margin: 0 auto;
+        padding: 0.5rem 0.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        z-index: 3;
+    }
+
+    .logo {
+        object-fit: cover;
+        height: 3rem;
+        width: 3rem;
+    }
+
+    .desktopMenuListItem {
+        margin: 1rem;
+        cursor: pointer;
+        font-size: 0.7rem;
+    }
+
+    .desktopMenuListItem:hover {
+        color: rgb(198, 176, 114);
+        margin-bottom: 0.5rem;
+        border-bottom: 3px solid rgb(198, 176, 114);
+    }
+
+    .desktopMenuImg {
+        object-fit: cover;
+        height: 0.5rem;
+        width: 0.5rem;
+        margin: 0.5rem;
+    }
+
+    .desktopMenuBtn {
+        background: rgb(198, 176, 114);
+        color: black;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 0.1rem;
+        border-radius: 2rem;
+        cursor: pointer;
+        font-size: 0.5rem;
+        text-align: center;
+        width: 4rem;
+        margin-right: 1rem;
+    }
+
+    .darkmode {
+        height: 1.3rem;
+        width: 1rem;
+    }
+
+    .activeLink {
+        color: rgb(198, 176, 114) !important;
+      }
+ }

@@ -1,0 +1,128 @@
+.contact-page {
+  height: 100vh;
+  width: 100vw;
+  max-width: 40rem;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.light {
+  background-color: white;
+  color: black;
+}
+
+.dark {
+  background-color: black;
+  color: white;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.contact-form {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.contact-form label {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: calc(100% - 2rem);
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* Display the name and email inputs side by side */
+.contact-form .name,
+.contact-form .email {
+  grid-column: span 1;
+}
+
+.contact-form textarea {
+  grid-column: span 2;
+  resize: vertical;
+}
+
+button {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  background-color: #c6b172;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #34495e;
+}
+
+/* Phone compatibility */
+@media screen and (max-width: 480px) {
+  h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .contact-form {
+    display: grid;
+    gap: 1.5rem;
+    font-size: 0.8rem;
+  }
+
+  .contact-form label {
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+    margin-left: 10px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    width: calc(100% - 4rem);
+    padding: 0.3rem;
+    font-size: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+
+  /* Display the name and email inputs side by side */
+  .contact-form .name,
+  .contact-form .email {
+    /* grid-column: span 1; */
+  }
+
+  .contact-form textarea {
+    grid-column: span 2;
+    resize: vertical;
+  }
+
+  button {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    background-color: #c6b172;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    /* margin-left: 90px; */
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  button:hover {
+    background-color: #34495e;
+  }
+}
